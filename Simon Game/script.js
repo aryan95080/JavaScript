@@ -3,6 +3,7 @@ const buttonColors = ["green", "red", "yellow", "blue"];
 let gameSequence = [];
 let userSequence = [];
 let level = 0;
+let maxLevel = 0;
 let started = false;
 
 const levelTitle = document.getElementById("level-title");
@@ -50,13 +51,14 @@ function checkAnswer(index) {
             setTimeout(nextLevel, 800);
         }
     } else {
+        maxLevel = Math.max(maxLevel, level);
         gameOver();
     }
 }
 
 /* Game over */
 function gameOver() {
-    levelTitle.innerHTML = `Game Over! <br> Score: <b>${level}</b> <br> Press Any Key to Restart`;
+    levelTitle.innerHTML = `Game Over! <br> Score: <b>${level}</b> <br> Max Score: <b>${maxLevel}</b><br> Press Any Key to Restart`;
     document.body.style.backgroundColor = "red";
 
     setTimeout(() => {

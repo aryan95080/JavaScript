@@ -5,7 +5,7 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,36 +13,40 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Layout */
 .game-wrapper {
     text-align: center;
+    padding: 20px;
 }
 
+/* Heading */
 .heading h1 {
     color: #fff;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 5vw, 2.6rem);
     margin-bottom: 10px;
 }
 
 .heading h2 {
     color: #f1f1f1;
-    margin-bottom: 30px;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    margin-bottom: 25px;
 }
 
+/* Game board */
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    width: 420px;
-    height: 420px;
-    padding: 20px;
-    gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(12px, 4vw, 20px);
+    width: min(90vw, 420px);
+    height: min(90vw, 420px);
+    padding: clamp(10px, 4vw, 20px);
     background: #eaeaea;
     border-radius: 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Buttons */
 .btn {
-    width: 170px;
-    height: 170px;
     border-radius: 25px;
     cursor: pointer;
     transition: transform 0.1s ease, box-shadow 0.1s ease;
@@ -53,7 +57,7 @@ body {
     transform: scale(0.95);
 }
 
-/* Button colors */
+/* Colors */
 .green { background-color: #2ecc71; }
 .red { background-color: #e74c3c; }
 .yellow { background-color: #f1c40f; }
@@ -66,4 +70,15 @@ body {
 
 .userFlash {
     box-shadow: 0 0 25px #000;
+}
+
+/* Mobile fine-tuning */
+@media (max-width: 480px) {
+    .container {
+        border-radius: 20px;
+    }
+
+    .btn {
+        border-radius: 18px;
+    }
 }
