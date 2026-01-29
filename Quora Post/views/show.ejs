@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show post in detail</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>Here is your post details</h1>
+    <hr>
+    <div class="box">
+        <h3 class="user"> @<%= post.username %></h3>
+        <p class="question"><%= post.question %></p>
+        <p class="details"><%= post.details %></p>
+    </div>
+    <button style="margin: auto; background-color: #007bff; padding: 15px 25px; border: none; border-radius: 5px; display: block;"><a style="text-decoration:none;color:white" href="/posts">Back to Posts</a></button>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+    <link rel="stylesheet" href="/stylesNew.css">
+
+</head>
+<body>
+    <div class="box">
+        <h1>Edit Post</h1>
+        <form method="post" action="/posts/<%= post.id %>?_method=patch">
+            <p>Username: <%= post.username %></p>
+            <label for="question">Question:</label><br>
+            <input type="text" id="question" name="question" value="<%= post.question %>" required><br><br>
+            <label for="details">Details:</label><br>
+            <textarea id="details" name="details" cols="50" required><%= post.details %></textarea><br><br>
+            <button type="submit">Submit post</button>
+        </form>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+    <link rel="stylesheet" href="/style.css">
+
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <br>
+    <a href="/posts/newPost">Create New Post</a>
+    <br>
+    <% for(let post of posts) { %>
+        <hr>
+        <div class="box">
+            <h3 class="user"> @<%= post.username %></h3>
+            <p class="question"><%= post.question %></p>
+            <p class="details"><%= post.details %></p>
+        </div>
+        <div style="display: flex; justify-content: center; gap: 10px; margin-bottom: 20px;">
+            <button style="background-color: #007bff; padding: 10px 15px; border: none; border-radius: 5px;;"><a style="text-decoration:none;color:white" href="/posts/<%= post.id %>">View Details</a></button>
+
+        <button style="background-color: rgb(217, 217, 2); padding: 10px 15px; border: none; border-radius: 5px;"><a style="text-decoration:none;color:white" href="/posts/<%= post.id %>/edit">Edit post</a></button>
+
+        <form style="display:inline;" action="/posts/<%= post.id %>?_method=DELETE" method="POST">
+            <button type="submit" style="background-color: #fa3347; padding: 10px 15px; border: none; border-radius: 5px; color:white; cursor:pointer;">Delete post</button>    
+        </form>
+        </div>
+    <% } %>
+</body>
+</html>

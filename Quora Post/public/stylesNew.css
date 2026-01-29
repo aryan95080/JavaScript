@@ -1,0 +1,18 @@
+.box{
+    background-color: rgb(255, 252, 252);
+    padding: 20px 50px;
+    border-radius: 5px;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    width: 40%;
+}
+button{
+    background-color: rgb(255, 255, 255);
+    border: 2px solid rgb(200, 200, 200);
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+
+}
