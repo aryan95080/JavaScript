@@ -171,7 +171,8 @@ app.patch("/posts/:id",(req,res)=>{
     const {id}=req.params;
     let post=posts.find((p)=>p.id===id);
     post.details=req.body.details;
-    console.log(post);
+    post.question=req.body.question;
+    //console.log(post);
     res.redirect("/posts");
 })
 
